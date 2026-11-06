@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Highlights Electrical Academy</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #172554;
+}
+
+header {
+  background: #102b50;
+  color: white;
+  padding: 25px 18px;
+}
+
+header h1 {
+  font-size: 23px;
+  margin: 0 0 8px;
+}
+
+header p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.container {
+  padding: 18px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.welcome {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.welcome h2 {
+  margin-top: 0;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.stat {
+  flex: 1;
+  background: white;
+  padding: 15px 8px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 23px;
+  color: #087bce;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.course {
+  background: white;
+  padding: 18px;
+  margin: 12px 0;
+  border-radius: 12px;
+  border-left: 5px solid #087bce;
+}
+
+.course h3 {
+  margin: 0 0 8px;
+}
+
+.course p {
+  color: #64748b;
+}
+
+button {
+  background: #087bce;
+  color: white;
+  border: none;
+  padding: 12px 17px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #075da0;
+}
+
+.quiz {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 25px;
+}
+
+#result {
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #64748b;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>HIGHLIGHTS ELECTRICAL ACADEMY</h1>
+  <p>Learn Today. Power Tomorrow.</p>
+</header>
+
+<div class="container">
+
+  <div class="welcome">
+    <h2>Welcome, Student!</h2>
+    <p>Your journey to becoming a skilled electrical professional starts here.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <strong id="completed">0</strong>
+      Lessons
+    </div>
+
+    <div class="stat">
+      <strong>3</strong>
+      Courses
+    </div>
+
+    <div class="stat">
+      <strong id="score">0</strong>
+      Quiz Points
+    </div>
+  </div>
+
+  <h2>Our Courses</h2>
+
+  <div class="course">
+    <h3>⚡ Electrical Theory</h3>
+    <p>Learn voltage, current, resistance and electrical circuits.</p>
+    <button onclick="lesson('Electrical Theory')">Start Learning</button>
+  </div>
+
+  <div class="course">
+    <h3>☀️ Solar Energy</h3>
+    <p>Understand solar panels, batteries and renewable energy.</p>
+    <button onclick="lesson('Solar Energy')">Start Learning</button>
+  </div>
+
+  <div class="course">
+    <h3>🛡️ Electrical Safety</h3>
+    <p>Learn important electrical safety principles and precautions.</p>
+    <button onclick="lesson('Electrical Safety')">Start Learning</button>
+  </div>
+
+  <div class="quiz">
+    <h2>Quick Quiz</h2>
+    <p>What is the unit of electrical current?</p>
+
+    <button onclick="answer(false)">Volt</button>
+    <button onclick="answer(true)">Ampere</button>
+    <button onclick="answer(false)">Ohm</button>
+
+    <p id="result"></p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Highlights Electrical Academy
+  <p>Education • Innovation • Excellence</p>
+</footer>
+
+<script>
+let completed = 0;
+let score = 0;
+
+function lesson(name) {
+  alert("Welcome to " + name +
+  "! Your lesson will be available soon.");
+
+  completed++;
+  document.getElementById("completed").textContent = completed;
+}
+
+function answer(correct) {
+  if (correct) {
+    score += 10;
+    document.getElementById("result").textContent =
+      "Correct! Well done. +10 points";
+  } else {
+    document.getElementById("result").textContent =
+      "Not quite. Try again!";
+  }
+
+  document.getElementById("score").textContent = score;
+}
+</script>
+
+</body>
+  </html>
+  
